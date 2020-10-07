@@ -40,7 +40,7 @@ deploy-cli-service -v
 npx deploy-cli-service -v
 ```
 
-![](https://s1.ax1x.com/2020/09/19/wIK8PK.png)
+![](https://ae01.alicdn.com/kf/U943f01b07cdd492499f3186582d813c8n.jpg)
 
 
 
@@ -52,7 +52,7 @@ npx deploy-cli-service -v
 deploy-cli-service -h
 ```
 
-![](https://s1.ax1x.com/2020/09/19/wIKrPf.png)
+![](https://ae01.alicdn.com/kf/Ud0667faaa3ef44939c8c016eb8a1cc026.jpg)
 
 
 
@@ -64,7 +64,7 @@ deploy-cli-service init # 或者使用简写 deploy-cli-service i
 
 根据提示填写内容，会在项目根目录下生成 `deploy.config.js` 文件，初始化配置只会生成 `dev` (开发环境)、`test` (测试环境)、`prod` (生产环境) 三个配置，再有其他配置可参考模板自行配置。
 
-![](https://s1.ax1x.com/2020/09/19/wIMRSO.png)
+![](https://ae01.alicdn.com/kf/Uf9bb311b13764e4aa25c51d57b52bdc2Z.jpg)
 
 
 
@@ -77,6 +77,7 @@ module.exports = {
   projectName: 'vue_samples', // 项目名称
   privateKey: '/Users/fuchengwei/.ssh/id_rsa',
   passphrase: '',
+  cluster: [], // 集群部署配置，要同时部署多台配置此属性如: ['dev', 'test', 'prod']
   dev: {
     // 环境对象
     name: '开发环境', // 环境名称
@@ -126,11 +127,31 @@ deploy-cli-service deploy --mode dev # 或者使用 deploy-cli-service d --mode 
 
 输入 `Y` 确认后即可开始自动部署，看见如下提示说明部署完成
 
-![](https://s1.ax1x.com/2020/09/19/wIQLU1.png)
+![](https://ae01.alicdn.com/kf/U6c196c63cab242cd894371c6d0725d87Q.jpg)
 
 
 
-#### 2.5 本地安装扩展
+#### 2.5 集群部署 （在项目目录下）
+
+注意：集群配置需要在 `deploy-cli-service` 中 配置 `cluster` 字段 （如：`cluster: ['dev', 'test', 'prod']`）
+
+```shell
+deploy-cli-service deploy # 或者使用 deploy-cli-service d
+```
+
+输入 `Y` 确认后即可开始自动部署，看见如下提示说明部署完成
+
+![](https://ae01.alicdn.com/kf/Ue11c75ee338844ac9f3668686879f988E.jpg)
+
+
+
+#### 2.6 更新优化
+
+如果不想把服务器密码保存在配置文件中，也可以在配置文件中删除 `password` 字段。在部署的时候会弹出输入密码界面。
+
+如果不想在部署前执行打包命令，在配置文件中删除 `script` 字段即可。
+
+#### 2.7 本地安装扩展
 
 如果使用本地安装命令的话，可以在项目根目录下的 `package.json` 文件中 `scripts` 脚本中添加如下代码
 
@@ -139,6 +160,7 @@ deploy-cli-service deploy --mode dev # 或者使用 deploy-cli-service d --mode 
   "serve": "vue-cli-service serve",
   "build": "vue-cli-service build",
   "lint": "vue-cli-service lint",
+  "deploy": "deploy-cli-service deploy",
   "deploy:dev": "deploy-cli-service deploy --mode dev",
   "deploy:test": "deploy-cli-service deploy --mode test",
   "deploy:prod": "deploy-cli-service deploy --mode prod"
