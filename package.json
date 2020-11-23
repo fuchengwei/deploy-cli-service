@@ -1,6 +1,6 @@
 {
   "name": "deploy-cli-service",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "前端一键自动化部署脚手架服务",
   "main": "lib/service.js",
   "homepage": "https://github.com/fuchengwei/deploy-cli-service",
