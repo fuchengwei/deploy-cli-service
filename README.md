@@ -31,7 +31,7 @@ npm install deploy-cli-service --save-dev
 查看版本，表示安装成功
 
 ```javascript
-deploy-cli-service -v
+deploy - cli - service - v
 ```
 
 注：本地安装的需要在调用前加 `npx`
@@ -41,8 +41,6 @@ npx deploy-cli-service -v
 ```
 
 ![](https://ae01.alicdn.com/kf/U943f01b07cdd492499f3186582d813c8n.jpg)
-
-
 
 ### 2 使用（以下代码都以全局安装为例）
 
@@ -54,8 +52,6 @@ deploy-cli-service -h
 
 ![](https://ae01.alicdn.com/kf/Ud0667faaa3ef44939c8c016eb8a1cc026.jpg)
 
-
-
 #### 2.2 初始化配置文件（在项目目录下）
 
 ```shell
@@ -65,8 +61,6 @@ deploy-cli-service init # 或者使用简写 deploy-cli-service i
 根据提示填写内容，会在项目根目录下生成 `deploy.config.js` 文件，初始化配置只会生成 `dev` (开发环境)、`test` (测试环境)、`prod` (生产环境) 三个配置，再有其他配置可参考模板自行配置。
 
 ![](https://ae01.alicdn.com/kf/Uf9bb311b13764e4aa25c51d57b52bdc2Z.jpg)
-
-
 
 #### 2.3 手动创建或修改配置文件
 
@@ -88,7 +82,8 @@ module.exports = {
     password: '123456', // 服务器登录密码
     distPath: 'dist', // 本地打包生成目录
     webDir: '/usr/local/nginx/html', // 服务器部署路径（不可为空或'/'）
-    isRemoveRemoteFile: true	// 是否删除远程文件（默认true）
+    isRemoveRemoteFile: true, // 是否删除远程文件（默认true）
+    isRemoveLocalFile: true // 是否删除本地文件（默认true）
   },
   test: {
     // 环境对象
@@ -100,7 +95,8 @@ module.exports = {
     password: '123456', // 服务器登录密码
     distPath: 'dist', // 本地打包生成目录
     webDir: '/usr/local/nginx/html', // 服务器部署路径（不可为空或'/'）
-    isRemoveRemoteFile: true	// 是否删除远程文件（默认true）
+    isRemoveRemoteFile: true, // 是否删除远程文件（默认true）
+    isRemoveLocalFile: true // 是否删除本地文件（默认true）
   },
   prod: {
     // 环境对象
@@ -112,7 +108,8 @@ module.exports = {
     password: '123456', // 服务器登录密码
     distPath: 'dist', // 本地打包生成目录
     webDir: '/usr/local/nginx/html', // 服务器部署路径（不可为空或'/'）
-    isRemoveRemoteFile: true	// 是否删除远程文件（默认true）
+    isRemoveRemoteFile: true, // 是否删除远程文件（默认true）
+    isRemoveLocalFile: true // 是否删除本地文件（默认true）
   }
 }
 ```
@@ -129,8 +126,6 @@ deploy-cli-service deploy --mode dev # 或者使用 deploy-cli-service d --mode 
 
 ![](https://ae01.alicdn.com/kf/U6c196c63cab242cd894371c6d0725d87Q.jpg)
 
-
-
 #### 2.5 集群部署 （在项目目录下）
 
 注意：集群配置需要在 `deploy-cli-service` 中 配置 `cluster` 字段 （如：`cluster: ['dev', 'test', 'prod']`）
@@ -142,8 +137,6 @@ deploy-cli-service deploy # 或者使用 deploy-cli-service d
 输入 `Y` 确认后即可开始自动部署，看见如下提示说明部署完成
 
 ![](https://ae01.alicdn.com/kf/Ue11c75ee338844ac9f3668686879f988E.jpg)
-
-
 
 #### 2.6 更新优化
 
@@ -174,4 +167,3 @@ npm run deploy:dev
 ```
 
 最后如果大家觉得还不错挺好用的话，麻烦给个 Star 😜😜😜。
-
