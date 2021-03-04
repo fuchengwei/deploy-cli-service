@@ -1,6 +1,6 @@
 {
   "name": "deploy-cli-service",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "description": "前端一键自动化部署脚手架服务",
   "main": "lib/service.js",
   "homepage": "https://github.com/fuchengwei/deploy-cli-service",
@@ -23,6 +23,7 @@
     "archiver": "^5.0.2",
     "chalk": "^4.1.0",
     "commander": "^6.1.0",
+    "dayjs": "^1.10.4",
     "inquirer": "^7.3.3",
     "minimist": "^1.2.5",
     "node-ssh": "^11.0.0",

@@ -82,6 +82,7 @@ module.exports = {
     password: '123456', // 服务器登录密码
     distPath: 'dist', // 本地打包生成目录
     webDir: '/usr/local/nginx/html', // 服务器部署路径（不可为空或'/'）
+    bakDir: '/usr/local/nginx/backup', // 备份路径 (打包前备份之前部署目录 最终备份路径为 /usr/local/nginx/backup/html.zip)
     isRemoveRemoteFile: true, // 是否删除远程文件（默认true）
     isRemoveLocalFile: true // 是否删除本地文件（默认true）
   },
@@ -95,6 +96,7 @@ module.exports = {
     password: '123456', // 服务器登录密码
     distPath: 'dist', // 本地打包生成目录
     webDir: '/usr/local/nginx/html', // 服务器部署路径（不可为空或'/'）
+    bakDir: '/usr/local/nginx/backup', // 备份路径 (打包前备份之前部署目录 最终备份路径为 /usr/local/nginx/backup/html.zip)
     isRemoveRemoteFile: true, // 是否删除远程文件（默认true）
     isRemoveLocalFile: true // 是否删除本地文件（默认true）
   },
@@ -108,6 +110,7 @@ module.exports = {
     password: '123456', // 服务器登录密码
     distPath: 'dist', // 本地打包生成目录
     webDir: '/usr/local/nginx/html', // 服务器部署路径（不可为空或'/'）
+    bakDir: '/usr/local/nginx/backup', // 备份路径 (打包前备份之前部署目录 最终备份路径为 /usr/local/nginx/backup/html.zip)
     isRemoveRemoteFile: true, // 是否删除远程文件（默认true）
     isRemoveLocalFile: true // 是否删除本地文件（默认true）
   }
@@ -143,6 +146,8 @@ deploy-cli-service deploy # 或者使用 deploy-cli-service d
 如果不想把服务器密码保存在配置文件中，也可以在配置文件中删除 `password` 字段。在部署的时候会弹出输入密码界面。
 
 如果不想在部署前执行打包命令，在配置文件中删除 `script` 字段即可。
+
+如果需要部署前备份，在配置文件中配置 `bakDir` 字段，为空不会备份。ps: 服务器需要安装 zip 模块，可使用 yum install zip 命令。
 
 #### 2.7 本地安装扩展
 
