@@ -31,7 +31,7 @@ npm install deploy-cli-service --save-dev
 查看版本，表示安装成功
 
 ```javascript
-deploy - cli - service - v
+deploy-cli-service - v
 ```
 
 注：本地安装的需要在调用前加 `npx`
