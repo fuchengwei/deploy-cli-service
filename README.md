@@ -71,6 +71,7 @@ module.exports = {
   projectName: 'vue_samples', // 项目名称
   privateKey: '/Users/fuchengwei/.ssh/id_rsa',
   passphrase: '',
+  readyTimeout: 20000, // 超时时间(毫秒)
   cluster: [], // 集群部署配置，要同时部署多台配置此属性如: ['dev', 'test', 'prod']
   dev: {
     // 环境对象
